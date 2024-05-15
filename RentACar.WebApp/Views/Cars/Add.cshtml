@@ -1,0 +1,64 @@
+﻿@model RentACar.WebApp.Models.ViewModels.Cars.CarAddViewModel
+
+
+<form asp-controller="Cars" asp-action="Add" method="post" enctype="multipart/form-data">
+    
+    <div class="mb-3">
+        <label asp-for="BrandName" class="form-label">Marka Adı</label>
+        <input asp-for="BrandName" type="text" class="form-control">
+    </div>
+    
+    <div class="mb-3">
+        <label asp-for="ModelName" class="form-label">Model Adı</label>
+        <input asp-for="ModelName" type="text" class="form-control">
+    </div>
+    
+    <div class="mb-3">
+        <label asp-for="ModelYear" class="form-label">Model Yılı</label>
+        <input asp-for="ModelYear" type="number" class="form-control">
+    </div>
+    
+    <div class="mb-3">
+        <label asp-for="DailyPrice" class="form-label">Günlük fiyatı</label>
+        <input asp-for="DailyPrice" type="number" class="form-control">
+    </div>
+    
+    <div class="mb-3">
+        <label asp-for="Plate" class="form-label">Plaka</label>
+        <input asp-for="Plate" type="text" class="form-control" >
+    </div>
+
+
+    <div class="mb-3">
+        <label asp-for="Image" class="form-label">Resim</label>
+        <input asp-for="Image" type="file" class="form-control" >
+    </div>
+    
+    <div class="mb-3">
+    
+        <label asp-for="ColorId" class="form-label">Renk</label>
+        <vc:color-select-list selected-color-id=1></vc:color-select-list>
+    </div>
+
+    <div class="mb-3">
+
+        <label asp-for="FuelId" class="form-label">Yakıt Tipi</label>
+        <vc:fuel-select-list selected-fuel-id=1></vc:fuel-select-list>
+    </div>
+
+    <div class="mb-3">
+
+        <label asp-for="TransmissionId" class="form-label">Vites Türü</label>
+        <vc:transmission-select-list selected-transmission-id=1></vc:transmission-select-list>
+    </div>
+    
+    <div class="mb-3">
+        <label asp-for="KiloMeter" class="form-label">Kilometre</label>
+        <input asp-for="KiloMeter" type="number" class="form-control">
+    </div>
+    
+    <div class="mb-3">
+        <vc:car-state selected-car-state="1"></vc:car-state>
+    </div>
+    <button type="submit" class="btn btn-outline-info">Ekle</button>
+</form>

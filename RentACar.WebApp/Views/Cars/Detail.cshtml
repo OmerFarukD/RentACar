@@ -1,0 +1,45 @@
+﻿@model CarResponseDto
+@{
+    ViewData["Title"] = "Araç Detayları";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="container">
+    <dl class="row">
+        <dt class="col-sm-3">Renk</dt>
+        <dd class="col-sm-9">@Model.ColorName</dd>
+
+        <dt class="col-sm-3">Yakıt Tipi</dt>
+        <dd class="col-sm-9">@Model.FuelName</dd>
+
+        <dt class="col-sm-3">Vites tipi</dt>
+        <dd class="col-sm-9">@Model.TransmissionName</dd>
+
+        <dt class="col-sm-3">Araç durumu</dt>
+        <dd class="col-sm-9">@Model.CarState.ToString()</dd>
+
+        <dt class="col-sm-3">Kilometer</dt>
+        <dd class="col-sm-9">@Model.Kilometer?.ToString("N0")</dd>
+
+        <dt class="col-sm-3">Model Yılı</dt>
+        <dd class="col-sm-9">@Model.ModelYear</dd>
+
+        <dt class="col-sm-3">Plaka</dt>
+        <dd class="col-sm-9">@Model.Plate</dd>
+
+        <dt class="col-sm-3">Marka Adı</dt>
+        <dd class="col-sm-9">@Model.BrandName</dd>
+
+        <dt class="col-sm-3">Model Adı</dt>
+        <dd class="col-sm-9">@Model.ModelName</dd>
+
+        <dt class="col-sm-3">Günlük Fiyat</dt>
+        <dd class="col-sm-9">
+            @if (Model.DailyPrice.HasValue)
+            {
+                @Model.DailyPrice.Value.ToString("C")
+            }
+        </dd>
+    </dl>
+</div>
